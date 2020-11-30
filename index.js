@@ -36,3 +36,36 @@ function recipe(x,n) {
 }
 
 // 
+
+function recipeFactorial() {
+    var totalN = 1;
+    var valueNum = +Math.abs(document.getElementById('txtIntegerNum').value);
+    if(valueNum == 0){
+        document.getElementById('resultCalculateN').innerHTML = 'This is bug';
+    }else{
+        for (let index = 1; index <= valueNum; index++) {
+            totalN = totalN * index;
+            console.log(index);
+        }
+        document.getElementById('resultCalculateN').innerHTML = 'Result: ' + totalN;
+    }
+}
+
+// 
+function generateButtons() {
+    var i = 1;
+    while (i<=10) {
+        var div = document.createElement('div');
+        div.className = "div-class";
+        $('#resultGenerate').append(div);
+        i++;
+    }
+    var divs = document.getElementsByClassName('div-class');
+    for (let index = 0; index < divs.length; index++) {
+        if((index + 1) % 2 == 0){
+            divs[index].style.background = 'red';
+        }else{
+            divs[index].style.background = 'blue';
+        }        
+    }
+}
